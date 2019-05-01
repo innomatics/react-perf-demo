@@ -1,6 +1,12 @@
 import { put, takeLatest } from "redux-saga/effects";
 
-import { loginError, logoutError, logoutSuccess, receiveModels } from "actions";
+import {
+  loginError,
+  logoutError,
+  logoutSuccess,
+  receiveModels,
+  clearModels,
+} from "actions";
 import {
   LOGIN_REQUEST,
   LOGOUT_REQUEST,
@@ -41,6 +47,7 @@ function* logoutUser() {
 
 function* fetchModels() {
   console.log("Hello");
+  yield put(clearModels());
   yield put(receiveModels(models));
 }
 

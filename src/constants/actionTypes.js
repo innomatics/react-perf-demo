@@ -12,3 +12,4 @@ export const GET_USER_FAILURE = "GET_USER_FAILURE";
 
 export const GET_MODELS_SUCCESS = "GET_MODELS_SUCCESS";
 export const GET_MODELS = "GET_MODELS";
+export const CLEAR_MODELS = "CLEAR_MODELS";

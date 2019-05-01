@@ -1,15 +1,21 @@
 import React from "react";
-import { getModels } from "actions";
+import { getModels, clearModels } from "actions";
 import Button from "components/Button";
+import CarMake from "components/CarMake";
 import Card from "components/Card";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-const Home = ({ getModels, models }) => (
+const Home = ({ getModels, clearModels, models }) => (
   <React.Fragment>
-    <Button onClick={() => getModels()}>Get the car models</Button>
+    <Card>
+      <Button onClick={() => getModels()}>Get the car models</Button>
+    </Card>
+    <Card>
+      <Button onClick={() => clearModels()}>Clear</Button>
+    </Card>
     <React.Fragment>
-      {models && models.map(model => <Card model={model} />)}
+      {models && models.map(model => <CarMake make={model} />)}
     </React.Fragment>
   </React.Fragment>
 );
@@ -22,10 +28,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   getModels,
+  clearModels,
 };
 
 Home.propTypes = {
   getModels: PropTypes.func,
+  clearModels: PropTypes.func,
   models: PropTypes.array,
 };
 
