@@ -14,7 +14,7 @@ const Root = ({ store }) => (
     <ThemeProvider theme={theme}>
       <React.Fragment>
         <Switch>
-          <PrivateRoute exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
 
           <Route exact path="/login" component={Login} />
           <Redirect to={{ pathname: "/login" }} />
