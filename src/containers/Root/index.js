@@ -4,7 +4,6 @@ import { ThemeProvider } from "styled-components";
 import React from "react";
 import PropTypes from "prop-types";
 
-import PrivateRoute from "../PrivateRoute";
 import Home from "../Home";
 import Login from "../Login";
 import theme from "../../constants/theme";

@@ -1,5 +1,5 @@
 export default {
-  Makes: [
+  makes: [
     {
       make_id: "abarth",
       make_display: "Abarth",

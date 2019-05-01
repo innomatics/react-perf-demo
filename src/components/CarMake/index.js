@@ -21,6 +21,15 @@ const CarMake = ({ make, allMakes }) => (
   </Card>
 );
 
+const CarMake2 = ({ make }) => (
+  <Card key={make.make_id}>
+    <Card>{make.make_display}</Card>
+    <Card>{make.make_country}</Card>
+    <Card>competitors: {make.competitorCount}</Card>
+    <Card>competitors: {make.commonCompetitorCount}</Card>
+  </Card>
+);
+
 CarMake.propTypes = {
   make: PropTypes.object,
   allMakes: PropTypes.array,
