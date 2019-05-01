@@ -15,7 +15,8 @@ const Home = ({ getModels, clearModels, models }) => (
       <Button onClick={() => clearModels()}>Clear</Button>
     </Card>
     <React.Fragment>
-      {models && models.map(model => <CarMake make={model} />)}
+      {models &&
+        models.map(model => <CarMake allMakes={models} make={model} />)}
     </React.Fragment>
   </React.Fragment>
 );
