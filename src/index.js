@@ -4,9 +4,12 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import Root from "./containers/Root";
 import configureStore from "./store/configureStore";
+import sagas from "./sagas";
 import * as serviceWorker from "./serviceWorker";
 
 export const store = configureStore();
+// sagas.forEach(saga => store.runSaga(saga));
+store.runSaga(sagas);
 
 ReactDOM.render(
   <Router>

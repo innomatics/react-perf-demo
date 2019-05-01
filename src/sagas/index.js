@@ -1,7 +1,13 @@
 import { put, takeLatest } from "redux-saga/effects";
 
-import { loginError, logoutError, logoutSuccess } from "actions";
-import { LOGIN_REQUEST, LOGOUT_REQUEST } from "constants/actionTypes";
+import { loginError, logoutError, logoutSuccess, receiveModels } from "actions";
+import {
+  LOGIN_REQUEST,
+  LOGOUT_REQUEST,
+  GET_MODELS,
+} from "constants/actionTypes";
+
+import models from "fixtures/models";
 
 export function* fetchUser() {
   try {
@@ -33,9 +39,15 @@ function* logoutUser() {
   }
 }
 
+function* fetchModels() {
+  console.log("Hello");
+  yield put(receiveModels(models));
+}
+
 function* rootSaga() {
   yield takeLatest(LOGIN_REQUEST, fetchUser);
   yield takeLatest(LOGOUT_REQUEST, logoutUser);
+  yield takeLatest(GET_MODELS, fetchModels);
 }
 
 export default rootSaga;

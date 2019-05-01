@@ -1,15 +1,35 @@
 import React from "react";
-import styled from "styled-components";
+import { getModels } from "actions";
+import Button from "components/Button";
+import Card from "components/Card";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-const Container = styled.div`
-  min-height: 100vh;
-  background-color: ${({ theme }) => theme.colors.gray95};
-  padding-left: ${({ theme }) => theme.space[2]}px;
-  padding-right: ${({ theme }) => theme.space[2]}px;
-`;
-
-const Home = () => (
-  <Container>You should not be able to access this page.</Container>
+const Home = ({ getModels, models }) => (
+  <React.Fragment>
+    <Button onClick={() => getModels()}>Get the car models</Button>
+    <React.Fragment>
+      {models && models.map(model => <Card model={model} />)}
+    </React.Fragment>
+  </React.Fragment>
 );
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    models: state.models.models.Makes,
+  };
+};
+
+const mapDispatchToProps = {
+  getModels,
+};
+
+Home.propTypes = {
+  getModels: PropTypes.func,
+  models: PropTypes.array,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Home);
