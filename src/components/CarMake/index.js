@@ -26,7 +26,7 @@ const CarMake2 = ({ make }) => (
     <Card>{make.make_display}</Card>
     <Card>{make.make_country}</Card>
     <Card>competitors: {make.competitorCount}</Card>
-    <Card>competitors: {make.commonCompetitorCount}</Card>
+    <Card>common competitors: {make.commonCompetitorCount}</Card>
   </Card>
 );
 
@@ -34,5 +34,6 @@ CarMake.propTypes = {
   make: PropTypes.object,
   allMakes: PropTypes.array,
 };
+CarMake2.propTypes = CarMake.propTypes;
 
-export default CarMake;
+export default CarMake2;

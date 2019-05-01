@@ -1,12 +1,11 @@
 import { put, takeLatest } from "redux-saga/effects";
 
-import { receiveModels, clearModels } from "actions";
+import { receiveModels } from "actions";
 import { GET_MAKES } from "constants/actionTypes";
 
 import data from "fixtures/makes";
 
 function* fetchModels() {
-  yield put(clearModels());
   yield put(receiveModels(data.makes));
 }
 

@@ -6,7 +6,7 @@ import CarMake2 from "components/CarMake";
 import Card from "components/Card";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { makesSelector } from "selectors/makes";
+import { makesWithCompetitorsO1 } from "selectors/makes";
 
 const Home = ({ getModels, clearModels, makes }) => (
   <React.Fragment>
@@ -24,7 +24,8 @@ const Home = ({ getModels, clearModels, makes }) => (
 
 const mapStateToProps = state => {
   return {
-    makes: makesSelector(state),
+    makes: makesWithCompetitorsO1(state),
+    //makes: state.makes.makes,
   };
 };
 
