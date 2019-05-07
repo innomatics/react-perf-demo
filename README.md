@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Demonstration project which renders some static data about cars and makes use of a memoized selector.
+
+This project was bootstrapped with [Create CC React App](https://github.com/commoncode/create-cc-react-app).
 
 ## Available Scripts
 
